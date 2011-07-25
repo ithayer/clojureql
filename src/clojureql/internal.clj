@@ -310,7 +310,6 @@
   (let [rsmeta (.getMetaData rs)
         idxs (range (.getColumnCount rsmeta))
         keys (map (comp keyword
-                        #(.toLowerCase ^String %)
                         #(.getColumnLabel rsmeta %)
                         inc)
                   idxs)
